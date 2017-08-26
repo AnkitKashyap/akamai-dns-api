@@ -28,9 +28,9 @@ def aws_to_nm():
     res = json.loads(result.text)
     print "Actual Response\n\n"
     print res
-    serial = res['zone']['soa']['serial']
-    serial = int(serial) + 1
-    res['zone']['soa']['serial'] = serial
+  #  serial = res['zone']['soa']['serial']
+  #  serial = int(serial) + 1
+    res['zone']['soa']['serial'] += 1
 
     Item1 = {u'active': True, u'ttl': 60, u'target': u'secure-loadtesting-1616539340.ap-south-1.elb.amazonaws.com.', u'name': u'securetest'}
     Item = {u'active': True, u'target': u'180.179.169.103', u'name': u'securetest', u'ttl': 60}
